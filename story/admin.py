@@ -1,9 +1,9 @@
-from Story.models import story
-from Place.models import place
+from story.models import Story
+from place.models import Places
 from django.contrib import admin
 
-class PlaceAdmin(admin.ModelAdmin):
+class StoryAdmin(admin.ModelAdmin):
     list_display = ('headline', 'pubdate')
 
-admin.site.register(story, storyAdmin)
+admin.site.register(Story, StoryAdmin)
 

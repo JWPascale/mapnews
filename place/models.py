@@ -14,4 +14,5 @@ class Neighborhoods(models.Model):
 
 class Places(models.Model):
     places = models.TextField()
-    neighborhoods = models.ForeignKey(Neighborhoods)
+    class Meta:
+        verbose_name_plural = "places"

@@ -1,7 +1,6 @@
-from story.models import story
-from place.models import place
+from place.models import Places
 from django.contrib import admin
 
 
-admin.site.register(place, placeAdmin)
+admin.site.register(Places)
 

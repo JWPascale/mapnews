@@ -14,10 +14,11 @@ class Section(models.Model):
 
 class Story(models.Model):
     headline = models.CharField(max_length=200)
-    byline = models.ManyToManyField(blank=True, null=True)
+    byline = models.ManyToManyField(Byline, blank=True, null=True)
     pubdate = models.DateField('date published')
     location = models.CharField(max_length=200)
     url = models.URLField(max_length=200)
     section = models.ForeignKey(Section)
-
+    class Meta:
+        verbose_name_plural = "stories"
 

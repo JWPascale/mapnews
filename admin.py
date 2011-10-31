@@ -1,5 +1,5 @@
-from Story.models import story
-from Place.models import place
+from story.models import story
+from place.models import place
 from django.contrib import admin
 
 class StoryAdmin(admin.ModelAdmin):
