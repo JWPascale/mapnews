@@ -22,7 +22,7 @@ class Neighborhoods(models.Model):
     def get_absolute_url(self):
         return "/Neighborhoods/%s/" %self.slug
 
-class Places(models.Model):
+class Place(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(blank=True, null=True)
     mpoly = models.MultiPolygonField()
@@ -32,4 +32,4 @@ class Places(models.Model):
     def __unicode__(self):
         return self.address
     def get_absolute_url(self):
-        return "/places/%s/" % self.slug 
+        return "/place/%s/" % self.slug 

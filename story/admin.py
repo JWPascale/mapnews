@@ -1,5 +1,5 @@
 from story.models import Story, Section, Byline
-from place.models import Places
+from place.models import Place
 from django.contrib import admin
 
 class StoryAdmin(admin.ModelAdmin):
