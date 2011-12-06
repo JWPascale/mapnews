@@ -30,6 +30,6 @@ class Place(models.Model):
     class Meta:
         verbose_name_plural = "places"
     def __unicode__(self):
-        return self.address
+        return self.name
     def get_absolute_url(self):
-        return "/place/%s/" % self.slug 
+        return "/place/%i/" % self.id

@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 from place.models import Location
 
 class Byline(models.Model):
@@ -25,6 +25,7 @@ class Story(models.Model):
     location = models.CharField(max_length=200)
     url = models.URLField(max_length=200)
     section = models.ManyToManyField(Section, blank=True, null=True)
+    objects = models.GeoManager()
     class Meta:
         verbose_name_plural = "stories"
     def __unicode__(self):

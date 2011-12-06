@@ -9,14 +9,15 @@ def place(request):
     })
 
 def place_list(request):
-    place_list= places_list.objects.order_by('place')
+    place_list= Place.objects.order_by('name')
     return render_to_response('place_list.html', {
         'place_list': place_list,
     })
 
-def place_detail(request, neighborhood):
-    place_detail = place_detail.objects.get.order_by('place')
-    stories = story.objects.filter(location__point__within = hood)
+def place_detail(request, place_id):
+    hood = Place.objects.get(id=place_id)
+    stories = Story.objects.filter(location = place_id)
     return render_to_response('place_detail.html', {
-        'place_detail' : place_detail
+        'hood' : hood,
+        'stories' : stories,
     })

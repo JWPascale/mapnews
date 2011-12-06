@@ -10,10 +10,18 @@ def homepage(request):
         'place': place,
    })
 
-def headline_list(request):
-    headline_list = headline_list.objects.order_by('headline')
-    return render_to_response('headline_list.html', {
-        'headline_list': headline_list,
+def search(request):
+    story = Story.objects.order_by('headline')
+    place = Place.objects.order_by('place')
+    return render_to_response('search.html', {
+        'story': story,
+        'place': place,
+   })
+
+def story_list(request):
+    story = Story.objects.order_by('headline')
+    return render_to_response('story_list.html', {
+        'story' : story,
     })
 
 def story_detail(request, story_id):
